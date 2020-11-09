@@ -46,7 +46,7 @@ Try it:
 Persist it:
 ```
 sudo mv /boot/firmware/homeassistant.service /etc/systemd/system/homeassistant.service
-sudo systemctl daemon reload
+sudo systemctl daemon-reload
 sudo systemctl start homeassistant
 ```
 
