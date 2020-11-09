@@ -8,18 +8,19 @@
 #         'ssh_authorized_keys', 'ssh_redirect_user'.
 users:
   - default
-  - name: <<<YOUR_USER_NAME>>>
+  - name: martin
     groups: users
     sudo: ALL=(ALL) ALL
     shell: /bin/bash
     ssh_authorized_keys:
-      - <<<YOUR_SSH_KEY>>>
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCoiuN55Io67WPM9/CNF+olqguBk6aUGL0lPibi7lqmCAGN8dyXTg0VYwp579FoHWkuq8oGb9+2l3/TSh//GQI8BaHSYIFvEf55RshJ/s8ZMmUXWH84wLPa/BcgF4iL4ADxTFuU6pUuz02r5DTkYLjWEhIBxb42F6bksHcTtGHByiVpQ6KwVYcgXg7GLX5+F5vbrtURrthVbNp9IzatM/nZ2u0b/j4/esvv9KbkKCfujO5kN91gAOMOqhFeRv++AvGOA3rYEKiTVkDY/PGAcySUGD8SaJddlLJBq1z5BQ3mtgcHHfr6dXsUqFmYw06YjyF1TRfenSAXHG+fx3oWjIIT3eixgazNmyvQ3njobkfYx+h6QkqHWhFedXBn/s2hSXzHGZb5Jq2W/nB1tLON7lZ5HixFkSLdahe6z2ZOdWXd3Mf3LEFV6qdKd1a5cBzpemOhrXao73dHb03InhDg4HPlY2OyeQF/eRwnc/NVamlJ9TrXmCjCSdvZJM79iNxwQSbwg1MYx+ECZlQguYwwZ2AS0nBmz15gFOmt74WsYslcK2JVkVSJb0A8IK928Sb6ZCoLs44YnZ+glRubsiK2wWeubQ6lKu/zAcURj+HS0bwfT6xyIXBJCF6RJu1q4MzPmMHOmA55BZfC4VHEwQ4puYQRUbXzHW5YLHFjmYsz2cypkw== Martin_Vogel@live.com
+
       
 ssh_pwauth: no
 
 chpasswd:
     list: |
-        <<<YOUR_USER_NAME>>>:<<<YOUR_PASSWORD_HASH>>>
+        martin:$6$NEzPmOUMsiTm18s1$9Xyd9HmdaXZXtlzgiuirJVDhjB75iuPVNRXRp.1PbEn2SEoPdPRf1ZlXfSyTon14a0ybkOB0Z6AbwfcSFCqiN0
 
 #As an alternative: Make your initial password expire
 #chpasswd:

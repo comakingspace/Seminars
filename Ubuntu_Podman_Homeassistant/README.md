@@ -1,3 +1,5 @@
+https://github.com/comakingspace/Seminars/tree/master/Ubuntu_Podman_Homeassistant
+
 # Installing Ubuntu Server
 
 Please download the raspberry pi imager:
@@ -46,8 +48,9 @@ Try it:
 Persist it:
 ```
 sudo mv /boot/firmware/homeassistant.service /etc/systemd/system/homeassistant.service
-sudo systemctl daemon reload
+sudo systemctl daemon-reload
 sudo systemctl start homeassistant
+sudo systemctl enable homeassistant
 ```
 
 
