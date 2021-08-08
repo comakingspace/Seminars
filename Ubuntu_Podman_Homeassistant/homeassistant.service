@@ -5,8 +5,14 @@ After=network-online.target
 
 [Service]
 Restart=on-failure
-ExecStartPre=/usr/bin/podman rm --ignore -f homeassistant
-ExecStart=/usr/bin/podman run --label "io.containers.autoupdate=image" --name homeassistant -p 8080:8123 --device /dev/ttyAMA0:/dev/ttyAMA0:rw -v /home/<<<YOUR_USER_NAME>>>/.homeassistant:/config homeassistant/raspberrypi4-homeassistant:stable
+ExecStart=/usr/bin/podman run \
+--replace \
+--label "io.containers.autoupdate=image" \
+--name homeassistant \
+-p 8080:8123 \
+--device /dev/ttyAMA0:/dev/ttyAMA0:rw \
+-v /home/<<<YOUR_USER_NAME>>>/.homeassistant:/config \
+homeassistant/raspberrypi4-homeassistant:stable
 ExecStop=/usr/bin/podman stop --ignore -t 10 homeassistant
 ExecStopPost=/usr/bin/podman rm --ignore -f homeassistant
 KillMode=none
